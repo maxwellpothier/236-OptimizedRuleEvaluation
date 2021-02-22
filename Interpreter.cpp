@@ -140,7 +140,6 @@ void Interpreter::optimizeRule(vector<Rule> rules) {
     backward.nodeMap.insert({i, tempNode});
   }
   for ( int i = 0; i < c; i++) {
-    bool nodeAdded = false;
     int c1 = (int) rules.at(i).ruleList.size();
     for (int j = 0; j < c1; j++) {
       for (int k = 0; k < c; k++) {
@@ -154,7 +153,6 @@ void Interpreter::optimizeRule(vector<Rule> rules) {
           }
           forward.addEdge(i,k, dependent);
           backward.addEdge(k,i, dependent);
-          nodeAdded = true;
         }
       }
     }
